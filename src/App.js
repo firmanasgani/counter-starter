@@ -1,5 +1,7 @@
 import { useState } from "react";
-import Navbar from './components//Navbar'
+import Navbar from './components/Navbar'
+import Container from './components/Container'
+import SearchInput from "./components/SearchInput";
 
 const App = () => {
     const [value, setValue] = useState('')
@@ -57,6 +59,13 @@ const App = () => {
     return (
       <>
         <Navbar />
+        <Container>
+          <SearchInput
+            onSubmit={handleSubmit}
+            onChange={(e) => setValue(e.target.value)}
+            value={value}  />
+
+        </Container>
       </>
     );
  

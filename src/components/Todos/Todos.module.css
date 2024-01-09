@@ -36,12 +36,12 @@
     justify-content: space-between;
     align-items: center;
     color: green;
-    width: 12px;
+    width: 120px;
 }
 
 .todoActionButton{
     border: none;
-    background-color: black;
+    background-color: unset;
     padding: unset;
     height: 24px;
     width: 24px;

@@ -16,16 +16,16 @@ const Todos = ({todos, onSubstraction, onAddition}) => {
                 })}>
                     {todo.title}
                     <div className={styles.todoIconWrapper}>
-                        <div className={styles.todoCount}>{todo.count}
-                        </div>
-
+                        <div className={styles.todoCount}>{todo.count}</div>
                         <button onClick={() => onSubstraction(index)} className={styles.todoActionButton}>
-                            <img src={minusIcon} alt="minus icon" />
+                             <img src={minusIcon} />
                         </button>
                         <button onClick={() => onAddition(index)} className={styles.todoActionButton}>
-                            <img src={plusIcon} alt="Plus Icon" />
+                            <img src={plusIcon} />
                         </button>
+                       
                     </div>
+                   
 
                 </div>
             ))}

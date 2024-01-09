@@ -2,6 +2,9 @@ import { useState } from "react";
 import Navbar from './components/Navbar'
 import Container from './components/Container'
 import SearchInput from "./components/SearchInput";
+import Info from "./components/Info";
+import Empty from "./components/Empty";
+import Todos from "./components/Todos/Todos";
 
 const App = () => {
     const [value, setValue] = useState('')
@@ -64,7 +67,20 @@ const App = () => {
             onSubmit={handleSubmit}
             onChange={(e) => setValue(e.target.value)}
             value={value}  />
+            <Info
+              todosLength={todos.length}
+              totalCount={getTotalCounts()}
+              onDelete={()=>setTodos([])}
+            />
 
+            {todos.length > 0 ? (
+              <Todos
+                todos={todos}
+                onSubstraction={(index) => handleSubstractionCount(index)}
+                onAddition={(index) => handleAdditionCount(index)} />
+            ) : (
+              <Empty />
+            )}
         </Container>
       </>
     );
